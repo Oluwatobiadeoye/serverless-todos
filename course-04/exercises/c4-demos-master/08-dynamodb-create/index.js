@@ -10,11 +10,12 @@ exports.handler = async (event) => {
   console.log('Processing event: ', event)
   const itemId = uuid.v4()
 
-  const parsedBody = JSON.parse(event.body)
+  console.log(event)
+
 
   const newItem = {
     id: itemId,
-    ...parsedBody
+    ...event
   }
 
   await docClient.put({

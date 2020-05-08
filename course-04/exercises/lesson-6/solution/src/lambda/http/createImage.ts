@@ -7,8 +7,6 @@ import { cors } from 'middy/middlewares'
 import * as AWSXRay from 'aws-xray-sdk'
 
 const XAWS = AWSXRay.captureAWS(AWS)
-
-
 const docClient = new XAWS.DynamoDB.DocumentClient()
 const s3 = new XAWS.S3({
   signatureVersion: 'v4'
